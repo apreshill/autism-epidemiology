@@ -56,7 +56,7 @@ The above figure will not look right. The final figure is a pdf, which we export
 
 
 ```r
-sink_fig <- "./figs/fig03_addm_records_by_state.pdf"
+sink_fig <- "./figs/fig03_addm_records_by_source.pdf"
 
 # save as pdf
 ggsave(fig03, file = sink_fig, height=9, width=12, dpi = 600)

@@ -97,6 +97,6 @@ fig3_dots
 ![](figs/unnamed-chunk-1-1.png)<!-- -->
 
 ```r
-ggsave(fig3_dots, file = "./figs/fig04_inc_access_to_services.pdf", height=9, width=12, dpi = 600)
+ggsave(fig3_dots, file = "./figs/fig04_increasing_service_access.pdf", height=9, width=12, dpi = 600)
 ```
 
