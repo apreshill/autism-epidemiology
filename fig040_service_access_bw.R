@@ -5,6 +5,9 @@
 # not only underestimate the true prevalence but may also create 
 # the illusion of rising prevalence over time (see discussion in text).
 
+# Thanks to Jeff Harrison on HelpMeViz.com for this figure! 
+# You can see the original figure here: http://helpmeviz.com/2015/05/06/combination-chart/
+
 # load packages
 library(readr)
 library(dplyr)
