@@ -38,10 +38,9 @@ fig040 <- ggplot(fig040, aes(x = factor(time), y = estimate))
 
 # adding jittered points
 fig040 <- fig040 + geom_jitter(aes(fill = factor(access)), 
-              position=position_jitter(width=.2, height = 0), 
+              position=position_jitter(width=.25, height = 0), 
               pch = 21,
               colour = "black",
-              alpha = .75,
               size = 2) 
 
 # formatting axes, plot area, + colors
@@ -68,31 +67,30 @@ fig040 <- fig040 + geom_segment(aes(x = 1.8, xend = 2.5, y = 60, yend = 60),
 # adding right text
 fig040 <- fig040 + annotate("text", 
            label = "Estimates of prevalence based\non population sampling will remain\nstable over time if true prevalence\nis stable.", 
-           x = 2.6, y = 105, size = 4, hjust = 0) 
+           x = 2.6, y = 105, size = 4, hjust = 0, family = "Lato") 
 fig040 <- fig040 + annotate("text", x = 2.6, y = 60, 
            label = "Estimates of prevalence based\non individuals accessing services\ncan create an illusion of an\nincrease in prevalence over time,\nyet still underestimate prevalence\nat both time points.", 
-           size=4, hjust=0) 
+           size=4, hjust=0, family = "Lato")  
   
 # more formatting
-fig040 <- fig040 + guides(colour = guide_legend(keywidth = 3, 
-                               keyheight = 3, 
-                               override.aes = list(alpha = 1))) 
+fig040 <- fig040 + guides(fill = guide_legend(keywidth = 1.5, 
+                               keyheight = 1.5))
 fig040 <- fig040 + theme_bw(base_family = "Lato") 
-fig040 <- fig040 + theme(axis.ticks = element_blank(), 
-        panel.border=element_blank(), 
-        axis.line = element_blank(), 
-        panel.grid.major = element_blank(), 
-        panel.grid.minor = element_blank(), 
-        legend.position=c(.7,.2), 
-        legend.text = element_text(size = 10), 
-        legend.title = element_text(size = 10), 
-        legend.background = element_rect(fill="gray90", size=.25, 
-                                         linetype="dotted"), 
-        axis.title.y = element_text(size=10),
-        axis.text = element_text(size=10))
+fig040 <- fig040 + theme(axis.ticks = element_blank())
+fig040 <- fig040 + theme(panel.border = element_blank()) 
+fig040 <- fig040 + theme(axis.line = element_blank())
+fig040 <- fig040 + theme(panel.grid.major = element_blank())
+fig040 <- fig040 + theme(panel.grid.minor = element_blank())
+fig040 <- fig040 + theme(legend.position=c(.7,.2))
+fig040 <- fig040 + theme(legend.text = element_text(size = 10))
+fig040 <- fig040 + theme(legend.title = element_text(size = 10))
+fig040 <- fig040 + theme(legend.background = element_rect(fill="gray90", size=.25, 
+                                         linetype="dotted"))
+fig040 <- fig040 + theme(axis.title.y = element_text(size=10))
+fig040 <- fig040 + theme(axis.text = element_text(size=10))
 
 
-ggsave(fig040, file = sink_fig, width = 8, height = 6, dpi = 600)
+ggsave(fig040, file = sink_fig, width = 7, height = 6, dpi = 600)
 
 # embed font to keep them for pdf
 embed_fonts(sink_fig)
