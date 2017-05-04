@@ -19,7 +19,7 @@ library(ggthemes)
 source_addm <- "./data/addm-since-2006.csv"
 
 # saved final PDF
-sink_fig <- "./figs/fig020_addm_source_bw.pdf"
+sink_fig <- "./figs/fig020_addm_sources_bw.pdf"
 
 # load data files & keep var names using readr::read_csv
 addm <- read_csv(source_addm, col_names = TRUE) 
