@@ -1,41 +1,10 @@
----
-title: "Figure 4"
-author: "Alison Presmanes Hill"
-output:
-  html_document:
-    keep_md: TRUE
-    highlight: pygments
-    theme: flatly
-    smart: false
----
+library(readr)
+library(dplyr)
+library(ggplot2)
+library(extrafont)
+library(tidyr)
+library(ggthemes)
 
-```{r setup, include = FALSE}
-knitr::opts_chunk$set(error = TRUE, comment = NA, warning = FALSE, message = FALSE, tidy = FALSE, fig.path="figs/", echo = TRUE)
-htmltools::tagList(rmarkdown::html_dependency_font_awesome())
-```
-
-<style>
-body {
-    font-family: "Cabin", sans-serif;
-}
-p {
-    font-family: "Cabin", sans-serif;
-}
-</style>
-
-<a href="mailto:hillali@ohsu.edu"><i class="fa fa-envelope fa-fw"></i>&nbsp; hillali@ohsu.edu</a><br>
-
-
-```{r load_packages, include = FALSE}
-suppressWarnings(suppressMessages(library(readr)))
-suppressWarnings(suppressMessages(library(dplyr)))
-suppressWarnings(suppressMessages(library(ggplot2)))
-suppressWarnings(suppressMessages(library(extrafont)))
-suppressWarnings(suppressMessages(library(tidyr)))
-suppressWarnings(suppressMessages(library(ggthemes)))
-```
-
-```{r}
 
 #create hypothetical data for fig3
 set.seed(1000)
@@ -67,9 +36,9 @@ fig3_dots <- ggplot(fig3, aes(x = factor(time),
   scale_y_continuous(name = "ASD Cases per 10,000") +
   coord_cartesian(ylim = c(0,120), xlim = c(.6, 4)) +
   scale_fill_manual(name = "ASD cases who are:", 
-                     values = c("black", "white"), 
-                     labels = c("Not accessing services", 
-                                "Accessing services")) + 
+                    values = c("black", "white"), 
+                    labels = c("Not accessing services", 
+                               "Accessing services")) + 
   
   # adding horizontal line for true prevalence
   geom_segment(aes(x = .6, xend = 2.5, y = 105, yend = 105), 
@@ -112,5 +81,3 @@ fig3_dots <- ggplot(fig3, aes(x = factor(time),
 fig3_dots
 
 ggsave(fig3_dots, file = "./figs/fig04_increasing_service_access.pdf", height=9, width=12, dpi = 600)
-```
-
