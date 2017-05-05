@@ -1,0 +1,16 @@
+---
+title: "autism_epidemiology_figures"
+author: "Alison Hill"
+date: "5/5/2017"
+output: html_document
+---
+
+```{r}
+source('fig020_asd_prevalence_bw.R')
+source('fig021_asd_prevalence_color.R')
+source('fig030_service_access_bw.R')
+source('fig031_service_access_color.R')
+source('fig040_addm_sources_bw.R')
+source('fig041_addm_sources_color.R')
+source('fig042_addm_raceethn_color.R')
+```
