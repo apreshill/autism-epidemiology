@@ -76,7 +76,7 @@ fig041 <- fig041 + annotate("text", x = 2.6, y = 60,
 # more formatting
 fig041 <- fig041 + guides(colour = guide_legend(keywidth = 1.5, 
                                                 keyheight = 1.5, 
-                                                override.aes = list(alpha = 1))) 
+                                                override.aes = list(alpha = 1, size = 4))) 
 fig041 <- fig041 + theme_bw(base_family = "Lato") 
 fig041 <- fig041 + theme(axis.ticks = element_blank())
 fig041 <- fig041 + theme(panel.border = element_blank()) 

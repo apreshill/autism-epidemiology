@@ -8,7 +8,7 @@ library(extrafont)
 prev <- read_csv("./data/asd_prevalence_estimates.csv")
 
 # path for final figure PDF
-sink_fig <- "./figs/fig010_asd_prevalence_estimates.pdf"
+sink_fig <- "./figs/fig010_asd_prevalence_bw.pdf"
 
 # create discrete variable for scale_fill_manual
 prev <- prev %>%
@@ -35,22 +35,22 @@ fig_prev_bw <- fig_prev_bw + labs(x=NULL, y=NULL,
                       title="ASD Prevalence Estimates Since 2000 (per 10,000)",
                       subtitle="(with 95% Confidence Intervals)")
 fig_prev_bw <- fig_prev_bw + theme_minimal(base_family="Lato")
-fig_prev_bw <- fig_prev_bw + theme(panel.grid=element_line(),
-                       panel.grid.major.y=element_line(color="#bdbdbd", size=0.15), 
-                       panel.grid.major.x=element_line(color="#d9d9d9", size=0.15), 
-                       panel.grid.minor.x=element_blank(), 
-                       panel.grid.minor.y=element_blank(), 
-                       axis.line=element_line(), 
-                       axis.line.x=element_blank(), # if wanted, (color="#2b2b2b", size=0.15)) 
-                       axis.line.y=element_blank(), #if wanted, (color="#2b2b2b", size=0.15))
-                       axis.ticks=element_line(), 
-                       axis.ticks.x=element_line(color="#bdbdbd", size=0.15), 
-                       axis.ticks.y=element_line(color="#bdbdbd", size=0.15), 
-                       axis.ticks.length = unit(.25, "cm"), 
-                       axis.text.y=element_text(margin=margin(r= 2)),
-                       plot.title=element_text(family="Lato"), 
-                       plot.subtitle=element_text(family="Lato"),
-                       plot.caption=element_text(size=11, hjust=0))
+fig_prev_bw <- fig_prev_bw + theme(panel.grid=element_line())
+fig_prev_bw <- fig_prev_bw + theme(panel.grid.major.y=element_line(color="#bdbdbd", size=0.15)) 
+fig_prev_bw <- fig_prev_bw + theme(panel.grid.major.x=element_line(color="#d9d9d9", size=0.15))
+fig_prev_bw <- fig_prev_bw + theme(panel.grid.minor.x=element_blank()) 
+fig_prev_bw <- fig_prev_bw + theme(panel.grid.minor.y=element_blank())
+fig_prev_bw <- fig_prev_bw + theme(axis.line=element_line())
+fig_prev_bw <- fig_prev_bw + theme(axis.line.x=element_blank()) # if wanted, (color="#2b2b2b", size=0.15)) 
+fig_prev_bw <- fig_prev_bw + theme(axis.line.y=element_blank()) #if wanted, (color="#2b2b2b", size=0.15))
+fig_prev_bw <- fig_prev_bw + theme(axis.ticks=element_line()) 
+fig_prev_bw <- fig_prev_bw + theme(axis.ticks.x=element_line(color="#bdbdbd", size=0.15)) 
+fig_prev_bw <- fig_prev_bw + theme(axis.ticks.y=element_line(color="#bdbdbd", size=0.15)) 
+fig_prev_bw <- fig_prev_bw + theme(axis.ticks.length = unit(.25, "cm"))
+fig_prev_bw <- fig_prev_bw + theme(axis.text.y=element_text(margin=margin(r = 2)))
+fig_prev_bw <- fig_prev_bw + theme(plot.title=element_text(family="Lato")) 
+fig_prev_bw <- fig_prev_bw + theme(plot.subtitle=element_text(family="Lato"))
+fig_prev_bw <- fig_prev_bw + theme(plot.caption=element_text(size=11, hjust=0))
 
 
 

@@ -73,8 +73,7 @@ fig040 <- fig040 + annotate("text", x = 2.6, y = 60,
            size=4, hjust=0, family = "Lato")  
   
 # more formatting
-fig040 <- fig040 + guides(fill = guide_legend(keywidth = 1.5, 
-                               keyheight = 1.5))
+fig040 <- fig040 + guides(fill = guide_legend(keywidth = 1.5, keyheight = 1.5))
 fig040 <- fig040 + theme_bw(base_family = "Lato") 
 fig040 <- fig040 + theme(axis.ticks = element_blank())
 fig040 <- fig040 + theme(panel.border = element_blank()) 
